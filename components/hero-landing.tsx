@@ -28,36 +28,42 @@ export function HeroLanding({ onSubmit, isLoading }: HeroLandingProps) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center text-center py-12 px-4 animate-fade-in">
-      <div className="glass-card w-full max-w-[800px] px-6 py-10 md:px-10 md:py-12">
-        <pre className="font-mono text-primary leading-tight text-sm md:text-base tracking-wider mb-4 select-none">
+    <div className="animate-fade-in">
+      {/* ASCII Logo - Separated at top */}
+      <div className="flex justify-center mb-8">
+        <pre className="font-mono text-primary leading-tight text-sm md:text-base tracking-wider select-none">
 {`░█░█░▀█▀░█▀█░█▀█░█▀▄
 ░░█░░░█░░█▀▀░█▀▀░█▀▄
 ░░▀░░▀▀▀░▀░░░▀░░░▀░▀`}
         </pre>
+      </div>
 
-        <h2 className="font-display font-bold uppercase tracking-tight text-3xl md:text-4xl text-foreground mb-2">
+      {/* Header */}
+      <div className="mb-4">
+        <h1 className="font-display font-bold uppercase tracking-tight text-2xl text-foreground mb-1">
           Ultimate URL Extraction
-        </h2>
-
-        <p className="font-jetbrains tracking-[0.15em] text-[0.7rem] uppercase text-muted-foreground mb-8 max-w-[500px] mx-auto">
+        </h1>
+        <p className="font-jetbrains tracking-[0.12em] text-[0.7rem] uppercase text-muted-foreground">
           Paste any link. Get every asset. No compromises.
         </p>
+      </div>
 
+      {/* Main Content Card */}
+      <div className="glass-card p-6">
         <form onSubmit={handleSubmit}>
-          <div className="flex bg-background rounded-lg p-1.5 border border-border transition-colors focus-within:border-primary">
+          <div className="flex bg-input rounded-lg p-1.5 border border-border transition-colors focus-within:border-primary">
             <input
               type="url"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               placeholder="Paste video link here..."
               required
-              className="flex-1 bg-transparent border-none text-foreground px-4 py-3 text-base outline-none placeholder:text-muted-foreground"
+              className="flex-1 bg-transparent border-none text-foreground px-4 py-3 text-sm outline-none placeholder:text-muted-foreground"
             />
             <button
               type="submit"
               disabled={isLoading}
-              className="bg-primary text-primary-foreground border-none px-6 py-3 rounded-md font-bold transition-transform hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100 flex items-center gap-2"
+              className="bg-primary text-primary-foreground border-none px-6 py-3 rounded-md font-bold hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center gap-2 whitespace-nowrap"
             >
               {isLoading ? (
                 <>
@@ -71,7 +77,7 @@ export function HeroLanding({ onSubmit, isLoading }: HeroLandingProps) {
           </div>
         </form>
 
-        <div className="flex items-center gap-5 mt-8 justify-center">
+        <div className="flex items-center gap-5 mt-6 justify-center">
           {[YouTubeIcon, XIcon, VimeoIcon, TikTokIcon, FacebookIcon].map(
             (Icon, i) => (
               <Icon
