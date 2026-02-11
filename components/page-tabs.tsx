@@ -15,16 +15,16 @@ const tabs = [
 
 export function PageTabs({ activeTab, onTabChange }: PageTabsProps) {
   return (
-    <nav className="flex gap-1 border-b border-border pb-0 mb-6">
+    <nav className="flex gap-1 mb-6">
       {tabs.map((tab) => (
         <button
           key={tab.id}
           onClick={() => onTabChange(tab.id)}
           className={cn(
-            "px-4 py-2.5 text-sm font-medium transition-colors rounded-t-md border-b-2",
+            "px-4 py-2 font-jetbrains text-[0.7rem] font-medium tracking-[0.1em] uppercase rounded-md border transition-all",
             activeTab === tab.id
-              ? "text-primary border-primary bg-primary/5"
-              : "text-muted-foreground border-transparent hover:text-foreground hover:bg-accent/50"
+              ? "text-primary bg-secondary border-border"
+              : "text-muted-foreground border-transparent hover:text-foreground hover:bg-secondary"
           )}
         >
           {tab.label}

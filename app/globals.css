@@ -4,27 +4,27 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 95%;
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 82 85% 55%;
-    --primary-foreground: 0 0% 2%;
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 85%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 55%;
-    --accent: 0 0% 14%;
-    --accent-foreground: 0 0% 95%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 36 32% 76%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 9%;
+    --muted-foreground: 0 0% 53%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14%;
-    --input: 0 0% 14%;
-    --ring: 82 85% 55%;
+    --border: 0 0% 10%;
+    --input: 0 0% 2%;
+    --ring: 36 32% 76%;
     --radius: 0.625rem;
-    --glass-border: 0 0% 18%;
+    --glass-border: 0 0% 100% / 0.08;
   }
 }
 
@@ -45,10 +45,15 @@
 
 /* Glass card */
 .glass-card {
-  background: hsla(0, 0%, 6%, 0.6);
-  backdrop-filter: blur(20px);
-  border: 1px solid hsl(var(--glass-border));
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
+  transition: border-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover {
+  border-color: hsl(var(--primary));
 }
 
 /* Custom scrollbar */
@@ -142,4 +147,103 @@ input[type="range"]::-moz-range-thumb {
   background: hsl(var(--primary));
   cursor: pointer;
   border: none;
+}
+
+/* Body radial gradient */
+body {
+  background: radial-gradient(circle at 50% 0%, #18181b, #09090b) fixed !important;
+}
+
+/* Upload area */
+.upload-area {
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  text-align: center;
+  background: rgba(10, 10, 10, 0.85);
+  transition: border-color 300ms ease, background-color 300ms ease;
+  cursor: pointer;
+}
+.upload-area:hover,
+.upload-area.dragover {
+  border-color: hsl(var(--primary));
+  background-color: hsl(var(--secondary));
+}
+
+/* Badges */
+.badge-modern {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.badge-hd {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+.badge-sd {
+  background: hsl(var(--secondary));
+  color: hsl(var(--foreground));
+}
+
+/* Frame card */
+.frame-card {
+  position: relative;
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) - 2px);
+  overflow: hidden;
+  background: rgba(10, 10, 10, 0.85);
+  transition: border-color 150ms ease;
+  cursor: pointer;
+}
+.frame-card:hover {
+  border-color: hsl(var(--primary));
+}
+.frame-card.selected {
+  border-color: hsl(var(--primary));
+}
+.frame-card .frame-info {
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: hsl(var(--foreground));
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.7rem;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+.frame-card:hover .frame-info {
+  opacity: 1;
+}
+
+/* Sticky action bar */
+.frame-actions-sticky {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Scene clip card */
+.scene-clip-card video {
+  width: 100%;
+  border-radius: calc(var(--radius) - 2px);
+  aspect-ratio: 16/9;
+  background: hsl(var(--background));
+  display: block;
 }

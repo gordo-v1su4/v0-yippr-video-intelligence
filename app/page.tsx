@@ -4,6 +4,8 @@ import { useState } from "react"
 import { PageTabs } from "@/components/page-tabs"
 import { HeroLanding } from "@/components/hero-landing"
 import { VideoResults } from "@/components/video-results"
+import { UploadTab } from "@/components/upload-tab"
+import { ChannelTab } from "@/components/channel-tab"
 import type { VideoInfo } from "@/lib/types"
 
 // Demo data to simulate a video analysis result
@@ -79,46 +81,9 @@ export default function Page() {
           </>
         )}
 
-        {activeTab === "upload-videos" && (
-          <div className="flex flex-col items-center justify-center py-20 animate-fade-in">
-            <div className="glass-card p-10 text-center max-w-md">
-              <h2 className="font-display font-bold uppercase text-xl text-foreground mb-2">
-                Upload Videos
-              </h2>
-              <p className="text-muted-foreground text-sm">
-                Drag and drop video files or click to browse. Supports MP4, MKV, AVI, MOV, and more.
-              </p>
-              <div className="mt-6 border-2 border-dashed border-border rounded-lg p-10 hover:border-primary/50 transition-colors cursor-pointer">
-                <p className="text-muted-foreground text-sm">
-                  Drop files here or click to upload
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
+        {activeTab === "upload-videos" && <UploadTab />}
 
-        {activeTab === "channel-bulk" && (
-          <div className="flex flex-col items-center justify-center py-20 animate-fade-in">
-            <div className="glass-card p-10 text-center max-w-md">
-              <h2 className="font-display font-bold uppercase text-xl text-foreground mb-2">
-                Channel Bulk
-              </h2>
-              <p className="text-muted-foreground text-sm mb-6">
-                Enter a channel URL to bulk extract all videos.
-              </p>
-              <div className="flex bg-background rounded-lg p-1.5 border border-border focus-within:border-primary transition-colors">
-                <input
-                  type="url"
-                  placeholder="Paste channel URL..."
-                  className="flex-1 bg-transparent border-none text-foreground px-4 py-3 text-sm outline-none placeholder:text-muted-foreground"
-                />
-                <button className="bg-primary text-primary-foreground border-none px-5 py-2.5 rounded-md text-sm font-bold hover:opacity-90 transition-opacity">
-                  Scan
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+        {activeTab === "channel-bulk" && <ChannelTab />}
       </div>
     </main>
   )
