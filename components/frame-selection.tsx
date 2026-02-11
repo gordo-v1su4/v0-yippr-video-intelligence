@@ -33,7 +33,7 @@ export function FrameSelection({ videoTitle, frames, onBack }: FrameSelectionPro
     <div className="animate-fade-in">
       <div className="flex justify-between items-center mb-4">
         <div>
-          <h1 className="font-display font-bold uppercase tracking-tight text-2xl text-foreground mb-1">
+          <h1 className="font-display font-bold uppercase tracking-tight text-2xl gradient-title mb-1">
             Frame Selection
           </h1>
           <p className="font-jetbrains tracking-[0.12em] text-[0.7rem] uppercase text-muted-foreground">

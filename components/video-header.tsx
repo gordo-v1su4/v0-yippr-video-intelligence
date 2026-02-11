@@ -40,7 +40,7 @@ export function VideoHeader({ video }: VideoHeaderProps) {
               {video.tags.slice(0, 10).map((tag) => (
                 <span
                   key={tag}
-                  className="text-[0.65rem] px-2 py-0.5 rounded-full bg-secondary text-secondary-foreground font-jetbrains uppercase tracking-wider"
+                  className="text-[0.65rem] px-2 py-0.5 bg-secondary text-secondary-foreground font-jetbrains uppercase tracking-wider"
                 >
                   {tag}
                 </span>

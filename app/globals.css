@@ -23,7 +23,7 @@
     --border: 0 0% 10%;
     --input: 0 0% 2%;
     --ring: 36 32% 76%;
-    --radius: 0.625rem;
+    --radius: 4px;
     --glass-border: 0 0% 100% / 0.08;
   }
 }
@@ -40,6 +40,12 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .gradient-title {
+    background: linear-gradient(135deg, #ffffff 30%, hsl(36, 32%, 76%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
@@ -175,7 +181,7 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 0.2rem 0.6rem;
-  border-radius: 20px;
+  border-radius: 3px;
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;

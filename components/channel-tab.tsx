@@ -70,7 +70,7 @@ export function ChannelTab() {
     <div className="animate-fade-in">
       <div className="flex justify-between items-center mb-4">
         <div>
-          <h1 className="font-display font-bold uppercase tracking-tight text-2xl text-foreground mb-1">
+          <h1 className="font-display font-bold uppercase tracking-tight text-2xl gradient-title mb-1">
             Channel Bulk
           </h1>
           <p className="font-jetbrains tracking-[0.12em] text-[0.7rem] uppercase text-muted-foreground">
@@ -85,19 +85,19 @@ export function ChannelTab() {
       {/* Search */}
       <div className="glass-card p-4 mb-4">
         <form onSubmit={handleFetch}>
-          <div className="flex bg-input rounded-lg p-1.5 border border-border transition-colors focus-within:border-primary">
+          <div className="flex bg-input p-1 border border-border transition-colors focus-within:border-primary">
             <input
               type="text"
               value={channelUrl}
               onChange={(e) => setChannelUrl(e.target.value)}
               placeholder="Enter YouTube Channel URL or @handle (e.g., @mkbhd)"
               required
-              className="flex-1 bg-transparent border-none text-foreground px-4 py-3 text-sm outline-none placeholder:text-muted-foreground"
+              className="flex-1 bg-transparent border-none text-foreground px-3 py-2 text-sm outline-none placeholder:text-muted-foreground"
             />
             <button
               type="submit"
               disabled={isLoading}
-              className="bg-primary text-primary-foreground border-none px-5 py-2.5 rounded-md text-sm font-bold hover:opacity-90 transition-opacity flex items-center gap-2 disabled:opacity-50"
+              className="bg-primary text-primary-foreground border-none px-5 py-2 text-sm font-bold hover:opacity-90 transition-opacity flex items-center gap-2 disabled:opacity-50"
             >
               {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
               <span>Fetch</span>

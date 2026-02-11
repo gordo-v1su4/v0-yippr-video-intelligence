@@ -69,7 +69,7 @@ export function VideoFormatsTable({
                 <td className="text-left pl-5 py-3">
                   <span
                     className={cn(
-                      "text-[0.7rem] px-2.5 py-1 rounded-full font-jetbrains tracking-wider font-medium",
+                      "text-[0.7rem] px-2.5 py-1 font-jetbrains tracking-wider font-medium",
                       f.height && f.height >= 720
                         ? "bg-primary/15 text-primary"
                         : "bg-secondary text-secondary-foreground"

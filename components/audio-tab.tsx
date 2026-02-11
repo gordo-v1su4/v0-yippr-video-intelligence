@@ -48,7 +48,7 @@ export function AudioTab({ formats }: AudioTabProps) {
                 className="border-b border-border/50 hover:bg-accent/30 transition-colors"
               >
                 <td className="text-left pl-3 py-3">
-                  <span className="text-[0.7rem] px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground font-jetbrains tracking-wider font-medium">
+                    <span className="text-[0.7rem] px-2.5 py-1 bg-secondary text-secondary-foreground font-jetbrains tracking-wider font-medium">
                     {mp3Mode ? "MP3" : f.ext.toUpperCase()}
                   </span>
                 </td>

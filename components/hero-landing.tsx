@@ -31,7 +31,7 @@ export function HeroLanding({ onSubmit, isLoading }: HeroLandingProps) {
     <div className="animate-fade-in">
       {/* Header */}
       <div className="mb-4">
-        <h1 className="font-display font-bold uppercase tracking-tight text-2xl text-foreground mb-1">
+        <h1 className="font-display font-bold uppercase tracking-tight text-2xl gradient-title mb-1">
           Ultimate URL Extraction
         </h1>
         <p className="font-jetbrains tracking-[0.12em] text-[0.7rem] uppercase text-muted-foreground">
@@ -42,19 +42,19 @@ export function HeroLanding({ onSubmit, isLoading }: HeroLandingProps) {
       {/* Main Content Card */}
       <div className="glass-card p-6">
         <form onSubmit={handleSubmit}>
-          <div className="flex bg-input rounded-lg p-1.5 border border-border transition-colors focus-within:border-primary">
+          <div className="flex bg-input p-1 border border-border transition-colors focus-within:border-primary">
             <input
               type="url"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               placeholder="Paste video link here..."
               required
-              className="flex-1 bg-transparent border-none text-foreground px-4 py-3 text-sm outline-none placeholder:text-muted-foreground"
+              className="flex-1 bg-transparent border-none text-foreground px-3 py-2 text-sm outline-none placeholder:text-muted-foreground"
             />
             <button
               type="submit"
               disabled={isLoading}
-              className="bg-primary text-primary-foreground border-none px-6 py-3 rounded-md font-bold hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center gap-2 whitespace-nowrap"
+              className="bg-primary text-primary-foreground border-none px-5 py-2 font-bold text-sm hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center gap-2 whitespace-nowrap"
             >
               {isLoading ? (
                 <>

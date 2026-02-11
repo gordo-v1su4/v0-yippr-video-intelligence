@@ -21,7 +21,7 @@ export function PageTabs({ activeTab, onTabChange }: PageTabsProps) {
           key={tab.id}
           onClick={() => onTabChange(tab.id)}
           className={cn(
-            "px-4 py-2 font-jetbrains text-[0.7rem] font-medium tracking-[0.1em] uppercase rounded-md border transition-all",
+            "px-4 py-2 font-jetbrains text-[0.7rem] font-medium tracking-[0.1em] uppercase border transition-all",
             activeTab === tab.id
               ? "text-primary bg-secondary border-border"
               : "text-muted-foreground border-transparent hover:text-foreground hover:bg-secondary"

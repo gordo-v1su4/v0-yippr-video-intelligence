@@ -139,7 +139,7 @@ export function UploadTab() {
     return (
       <div className="animate-fade-in">
         <div className="mb-4">
-          <h1 className="font-display font-bold uppercase tracking-tight text-2xl text-foreground mb-1">
+          <h1 className="font-display font-bold uppercase tracking-tight text-2xl gradient-title mb-1">
             Upload Videos
           </h1>
           <p className="font-jetbrains tracking-[0.12em] text-[0.7rem] uppercase text-muted-foreground">
@@ -258,7 +258,7 @@ export function UploadTab() {
     return (
       <div className="animate-fade-in">
         <div className="mb-4">
-          <h1 className="font-display font-bold uppercase tracking-tight text-2xl text-foreground mb-1">
+          <h1 className="font-display font-bold uppercase tracking-tight text-2xl gradient-title mb-1">
             Process Uploads
           </h1>
           <p className="font-jetbrains tracking-[0.12em] text-[0.7rem] uppercase text-muted-foreground">
@@ -393,7 +393,7 @@ export function UploadTab() {
     <div className="animate-fade-in">
       <div className="flex justify-between items-center mb-4">
         <div>
-          <h1 className="font-display font-bold uppercase tracking-tight text-2xl text-foreground mb-1">
+          <h1 className="font-display font-bold uppercase tracking-tight text-2xl gradient-title mb-1">
             Extraction Results
           </h1>
           <p className="font-jetbrains tracking-[0.12em] text-[0.7rem] uppercase text-muted-foreground">
