@@ -53,6 +53,13 @@ export default function Page() {
   return (
     <main className="min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-6">
+        {/* Yippr ASCII Logo - persistent across all tabs */}
+        <pre className="font-mono text-primary leading-tight text-[0.6rem] md:text-xs tracking-wider select-none mb-5">
+{`░█░█░▀█▀░█▀█░█▀█░█▀▄
+░░█░░░█░░█▀▀░█▀▀░█▀▄
+░░▀░░▀▀▀░▀░░░▀░░░▀░▀`}
+        </pre>
+
         <PageTabs activeTab={activeTab} onTabChange={(tab) => { setActiveTab(tab); handleReset() }} />
 
         {activeTab === "url-extraction" && (

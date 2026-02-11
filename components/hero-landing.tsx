@@ -29,15 +29,6 @@ export function HeroLanding({ onSubmit, isLoading }: HeroLandingProps) {
 
   return (
     <div className="animate-fade-in">
-      {/* ASCII Logo - Separated at top */}
-      <div className="flex justify-center mb-8">
-        <pre className="font-mono text-primary leading-tight text-sm md:text-base tracking-wider select-none">
-{`░█░█░▀█▀░█▀█░█▀█░█▀▄
-░░█░░░█░░█▀▀░█▀▀░█▀▄
-░░▀░░▀▀▀░▀░░░▀░░░▀░▀`}
-        </pre>
-      </div>
-
       {/* Header */}
       <div className="mb-4">
         <h1 className="font-display font-bold uppercase tracking-tight text-2xl text-foreground mb-1">
