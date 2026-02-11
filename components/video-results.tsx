@@ -17,7 +17,7 @@ export function VideoResults({ video, submittedUrl }: VideoResultsProps) {
   const [workTab, setWorkTab] = useState("video-assets")
 
   return (
-    <div className="animate-fade-in max-w-[1100px] mx-auto">
+    <div className="animate-fade-in">
       <VideoHeader video={video} />
       <WorkTabs activeTab={workTab} onTabChange={setWorkTab} />
 

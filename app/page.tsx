@@ -74,7 +74,7 @@ export default function Page() {
 
             {videoInfo && !isLoading && (
               <>
-                <div className="max-w-[1100px] mx-auto mb-4">
+                <div className="mb-4">
                   <button
                     onClick={handleReset}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5"

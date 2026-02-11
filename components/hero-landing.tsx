@@ -34,7 +34,7 @@ export function HeroLanding({ onSubmit, isLoading }: HeroLandingProps) {
         <h1 className="font-display font-bold uppercase tracking-tight text-2xl gradient-title mb-1">
           Ultimate URL Extraction
         </h1>
-        <p className="font-jetbrains tracking-[0.12em] text-[0.7rem] uppercase text-muted-foreground">
+        <p className="text-[0.7rem] text-muted-foreground">
           Paste any link. Get every asset. No compromises.
         </p>
       </div>

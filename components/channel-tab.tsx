@@ -68,18 +68,18 @@ export function ChannelTab() {
 
   return (
     <div className="animate-fade-in">
-      <div className="flex justify-between items-center mb-4">
-        <div>
+      <div className="mb-4">
+        <div className="flex items-center gap-3">
           <h1 className="font-display font-bold uppercase tracking-tight text-2xl gradient-title mb-1">
             Channel Bulk
           </h1>
-          <p className="font-jetbrains tracking-[0.12em] text-[0.7rem] uppercase text-muted-foreground">
-            Analyze and rip multiple videos from any creator.
-          </p>
+          {isDownloading && (
+            <Loader2 className="w-5 h-5 text-primary animate-spin" />
+          )}
         </div>
-        {isDownloading && (
-          <Loader2 className="w-6 h-6 text-primary animate-spin" />
-        )}
+        <p className="text-[0.7rem] text-muted-foreground">
+          Analyze and rip multiple videos from any creator.
+        </p>
       </div>
 
       {/* Search */}

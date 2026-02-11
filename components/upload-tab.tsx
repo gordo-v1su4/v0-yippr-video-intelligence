@@ -142,15 +142,15 @@ export function UploadTab() {
           <h1 className="font-display font-bold uppercase tracking-tight text-2xl gradient-title mb-1">
             Upload Videos
           </h1>
-          <p className="font-jetbrains tracking-[0.12em] text-[0.7rem] uppercase text-muted-foreground">
+          <p className="text-[0.7rem] text-muted-foreground">
             Drop local files. Extract every frame.
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-4">
-          <div className="flex-1">
+        <div className="flex flex-col lg:flex-row lg:items-stretch gap-4">
+          <div className="flex-1 flex flex-col">
             <div
-              className={`upload-area mb-4 ${dragover ? "dragover" : ""}`}
+              className={`upload-area flex-1 ${dragover ? "dragover" : ""}`}
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
               onDrop={handleDrop}
@@ -220,8 +220,8 @@ export function UploadTab() {
             )}
           </div>
 
-          <div className="lg:w-80 flex-shrink-0">
-            <div className="glass-card p-4">
+          <div className="lg:w-80 flex-shrink-0 flex flex-col">
+            <div className="glass-card p-4 flex-1 flex flex-col">
               <div className="flex items-center gap-2 mb-3">
                 <ShieldCheck className="w-[18px] h-[18px] text-primary" />
                 <h5 className="text-base font-medium text-foreground">Requirements</h5>
@@ -242,7 +242,7 @@ export function UploadTab() {
                   ))}
                 </div>
               </div>
-              <div className="p-3 rounded-md border border-border bg-transparent text-sm text-muted-foreground flex items-start gap-2 normal-case">
+              <div className="p-3 rounded-md border border-border bg-transparent text-sm text-muted-foreground flex items-start gap-2 normal-case mt-auto">
                 <Info className="w-4 h-4 flex-shrink-0 mt-0.5" />
                 <span>Processing time depends on video duration and frame selection.</span>
               </div>
@@ -261,12 +261,12 @@ export function UploadTab() {
           <h1 className="font-display font-bold uppercase tracking-tight text-2xl gradient-title mb-1">
             Process Uploads
           </h1>
-          <p className="font-jetbrains tracking-[0.12em] text-[0.7rem] uppercase text-muted-foreground">
+          <p className="text-[0.7rem] text-muted-foreground">
             Configure extraction settings for your files.
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-4">
+        <div className="flex flex-col lg:flex-row lg:items-start gap-4">
           <div className="flex-1">
             <div className="glass-card p-4">
               <div className="flex justify-between items-center mb-4">
@@ -391,21 +391,21 @@ export function UploadTab() {
   // Step 3: Results
   return (
     <div className="animate-fade-in">
-      <div className="flex justify-between items-center mb-4">
-        <div>
-          <h1 className="font-display font-bold uppercase tracking-tight text-2xl gradient-title mb-1">
+      <div className="mb-4">
+        <div className="flex items-center justify-between mb-1">
+          <h1 className="font-display font-bold uppercase tracking-tight text-2xl gradient-title">
             Extraction Results
           </h1>
-          <p className="font-jetbrains tracking-[0.12em] text-[0.7rem] uppercase text-muted-foreground">
-            Keyframe batches for your uploaded videos.
-          </p>
+          <button
+            onClick={() => { setStep("upload"); setFiles([]); setProcessedVideos([]); setResultFrames([]) }}
+            className="bg-transparent text-foreground border border-border px-4 py-1.5 text-sm font-medium hover:bg-secondary hover:border-primary transition-colors"
+          >
+            Upload More
+          </button>
         </div>
-        <button
-          onClick={() => { setStep("upload"); setFiles([]); setProcessedVideos([]); setResultFrames([]) }}
-          className="bg-transparent text-foreground border border-border px-4 py-2 rounded-md text-sm font-medium hover:bg-secondary hover:border-primary transition-colors"
-        >
-          Upload More
-        </button>
+        <p className="text-[0.7rem] text-muted-foreground">
+          Keyframe batches for your uploaded videos.
+        </p>
       </div>
 
       {processedVideos.filter(v => selectedVideos.has(v.id)).map(v => (
