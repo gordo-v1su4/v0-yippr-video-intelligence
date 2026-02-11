@@ -114,7 +114,7 @@ export function ChannelTab() {
               <Info className="w-4 h-4 text-primary" />
               Quick Guide
             </h4>
-            <ul className="text-muted-foreground text-sm flex flex-col gap-2">
+            <ul className="text-muted-foreground text-sm flex flex-col gap-2 normal-case">
               <li>Paste channel URL or just the @handle</li>
               <li>Analyzes the latest 12 video uploads</li>
               <li>Automatic best-quality selection</li>
@@ -125,7 +125,7 @@ export function ChannelTab() {
               <Zap className="w-4 h-4 text-primary" />
               Smart Features
             </h4>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-muted-foreground text-sm normal-case">
               Use <strong className="text-foreground">Smart Transcript</strong> mode to find engageable segments automatically via transcript analysis.
             </p>
           </div>
@@ -229,7 +229,7 @@ export function ChannelTab() {
                 </div>
                 <div className="px-1">
                   <label
-                    className="text-sm font-medium text-foreground block truncate mb-1 cursor-pointer"
+                    className="text-sm font-medium text-foreground block truncate mb-1 cursor-pointer normal-case"
                     onClick={() => toggleVideo(video.id)}
                   >
                     {video.title}

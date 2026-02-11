@@ -18,7 +18,7 @@ export function VideoHeader({ video }: VideoHeaderProps) {
           />
         )}
         <div className="text-left flex-grow">
-          <h2 className="text-lg font-bold text-foreground mb-2 text-balance">
+          <h2 className="text-lg font-bold text-foreground mb-2 text-balance normal-case">
             {video.title}
           </h2>
           <div className="flex flex-wrap gap-4 mb-2">

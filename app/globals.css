@@ -33,7 +33,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-[0.8rem] uppercase tracking-[0.08em];
   }
 }
 
@@ -47,6 +47,11 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+}
+
+/* Inputs should not be uppercase */
+input, textarea, select option {
+  text-transform: none;
 }
 
 /* Glass card */
@@ -125,6 +130,7 @@
   color: hsl(var(--muted-foreground));
   overflow-y: auto;
   line-height: 1.6;
+  text-transform: none;
 }
 
 /* Form range */

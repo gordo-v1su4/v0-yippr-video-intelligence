@@ -187,7 +187,7 @@ export function UploadTab() {
                     <div key={f.id} className="glass-card p-2 flex justify-between items-center">
                       <div className="flex items-center gap-2 overflow-hidden">
                         <Video className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-                        <span className="text-sm truncate text-foreground">{f.name}</span>
+                        <span className="text-sm truncate text-foreground normal-case">{f.name}</span>
                         <span className="text-[0.65rem] text-muted-foreground flex-shrink-0">
                           {(f.size / (1024 * 1024)).toFixed(2)} MB
                         </span>
@@ -242,7 +242,7 @@ export function UploadTab() {
                   ))}
                 </div>
               </div>
-              <div className="p-3 rounded-md border border-border bg-transparent text-sm text-muted-foreground flex items-start gap-2">
+              <div className="p-3 rounded-md border border-border bg-transparent text-sm text-muted-foreground flex items-start gap-2 normal-case">
                 <Info className="w-4 h-4 flex-shrink-0 mt-0.5" />
                 <span>Processing time depends on video duration and frame selection.</span>
               </div>
@@ -289,7 +289,7 @@ export function UploadTab() {
                         id={`vid-${v.id}`}
                       />
                       <div className="flex-grow overflow-hidden">
-                        <label htmlFor={`vid-${v.id}`} className="font-medium text-foreground block truncate mb-1 cursor-pointer">
+                        <label htmlFor={`vid-${v.id}`} className="font-medium text-foreground block truncate mb-1 cursor-pointer normal-case">
                           {v.filename}
                         </label>
                         <div className="flex flex-wrap gap-2">
@@ -412,7 +412,7 @@ export function UploadTab() {
         <div key={v.id} className="glass-card p-4 mb-4">
           <div className="flex justify-between items-start mb-4">
             <div>
-              <h3 className="text-lg font-medium text-foreground mb-2">{v.filename}</h3>
+              <h3 className="text-lg font-medium text-foreground mb-2 normal-case">{v.filename}</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="badge-modern badge-hd">{resultFrames.length} Shots</span>
                 <span className="badge-modern badge-sd">{v.duration.toFixed(1)}s</span>
